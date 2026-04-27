@@ -1,16 +1,32 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { About } from "@/components/About";
+import { FindUs } from "@/components/FindUs";
+import { Footer } from "@/components/Footer";
+import { Hero } from "@/components/Hero";
+import { Menu } from "@/components/Menu";
+import { Navigation } from "@/components/Navigation";
+import { Reviews } from "@/components/Reviews";
+import { useActiveSection, useReveal } from "@/hooks/use-scroll-effects";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  useReveal();
+  useActiveSection(["home", "about", "menu", "reviews", "find-us"]);
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <>
+      <a href="#home" className="skip-link">
+        Sari la conținut
+      </a>
+      <Navigation />
+      <main id="main">
+        <Hero />
+        <About />
+        <Menu />
+        <Reviews />
+        <FindUs />
+      </main>
+      <Footer />
+    </>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
